@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://192.168.90.5:5432/hmade
+    username: root
+    password: 1234
+
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        globally_quoted_identifiers: true
+    hibernate:
+      ddl-auto: none
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    generate-ddl: false
+    show-sql: true
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
+  main:
+    allow-bean-definition-overriding: true
+  security:
+    user:
+      password: 1234 #the password which apps will use to access its configurations
+      name: user
+
